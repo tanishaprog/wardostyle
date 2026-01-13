@@ -1,0 +1,56 @@
+import { motion } from "framer-motion";
+import { Heart, Instagram, Twitter } from "lucide-react";
+
+export const Footer = () => {
+  return (
+    <footer className="py-12 px-6 lg:px-12 border-t border-border">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Logo */}
+          <motion.div
+            className="flex items-center gap-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            <span className="font-handwritten text-4xl text-primary">W</span>
+            <span className="font-display text-xl font-bold">wardo</span>
+          </motion.div>
+
+          {/* Links */}
+          <div className="flex items-center gap-8 text-sm text-muted-foreground">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Terms</a>
+            <a href="#" className="hover:text-foreground transition-colors">Contact</a>
+          </div>
+
+          {/* Social */}
+          <div className="flex items-center gap-4">
+            <motion.a
+              href="#"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Instagram className="w-5 h-5" />
+            </motion.a>
+            <motion.a
+              href="#"
+              className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-colors"
+              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Twitter className="w-5 h-5" />
+            </motion.a>
+          </div>
+        </div>
+
+        {/* Bottom line */}
+        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+          <p className="flex items-center justify-center gap-1">
+            Made with <Heart className="w-4 h-4 text-pink fill-pink" /> in Mumbai
+          </p>
+          <p className="mt-1 font-handwritten text-lg">© 2024 Wardo. Your second brain for fashion.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
