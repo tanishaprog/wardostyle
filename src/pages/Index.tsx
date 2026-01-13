@@ -1,12 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navigation } from "@/components/Navigation";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { StylingDemo } from "@/components/sections/StylingDemo";
+import { ClosetDemo } from "@/components/sections/ClosetDemo";
+import { AvatarDemo } from "@/components/sections/AvatarDemo";
+import { StyleDNA } from "@/components/sections/StyleDNA";
+import { WhyWardo } from "@/components/sections/WhyWardo";
+import { WaitlistCTA } from "@/components/sections/WaitlistCTA";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background overflow-x-hidden">
+      <Navigation />
+      
+      <main>
+        <HeroSection />
+        
+        <div id="styling">
+          <StylingDemo />
+        </div>
+        
+        <div id="closet">
+          <ClosetDemo />
+        </div>
+        
+        <div id="avatar">
+          <AvatarDemo />
+        </div>
+        
+        <div id="style-dna">
+          <StyleDNA />
+        </div>
+        
+        <div id="why">
+          <WhyWardo />
+        </div>
+        
+        <div id="waitlist">
+          <WaitlistCTA />
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
