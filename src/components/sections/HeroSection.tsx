@@ -3,27 +3,48 @@ import { FloatingNote } from "../FloatingNote";
 import { ScribbleArrow } from "../ScribbleArrow";
 import { MagneticButton } from "../MagneticButton";
 import { Sparkles as SparklesEffect } from "../ParticleField";
+import { ParallaxShape } from "../ParallaxLayer";
 import { Sparkles, Shirt, Brain } from "lucide-react";
 
 export const HeroSection = () => {
   return (
     <section className="min-h-screen relative overflow-hidden px-6 lg:px-12 py-20 flex items-center">
-      {/* Background decorative elements */}
+      {/* Parallax background shapes */}
       <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 w-32 h-32 rounded-full bg-pink/20"
-          animate={{ scale: [1, 1.1, 1], rotate: [0, 5, 0] }}
-          transition={{ duration: 8, repeat: Infinity }}
+        <ParallaxShape 
+          shape="circle" 
+          size={200} 
+          color="hsl(var(--pink) / 0.15)" 
+          speed={0.4}
+          className="top-20 left-10"
         />
-        <motion.div
-          className="absolute bottom-40 right-20 w-48 h-48 rounded-full bg-secondary/30"
-          animate={{ scale: [1, 1.15, 1], rotate: [0, -5, 0] }}
-          transition={{ duration: 10, repeat: Infinity, delay: 1 }}
+        <ParallaxShape 
+          shape="blob" 
+          size={300} 
+          color="hsl(var(--secondary) / 0.2)" 
+          speed={-0.3}
+          className="bottom-20 right-10"
         />
-        <motion.div
-          className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-accent/20"
-          animate={{ scale: [1, 1.2, 1] }}
-          transition={{ duration: 6, repeat: Infinity, delay: 2 }}
+        <ParallaxShape 
+          shape="circle" 
+          size={150} 
+          color="hsl(var(--accent) / 0.15)" 
+          speed={0.5}
+          className="top-1/3 right-1/4"
+        />
+        <ParallaxShape 
+          shape="square" 
+          size={100} 
+          color="hsl(var(--primary) / 0.1)" 
+          speed={-0.4}
+          className="bottom-1/3 left-1/4"
+        />
+        <ParallaxShape 
+          shape="blob" 
+          size={180} 
+          color="hsl(var(--yellow) / 0.15)" 
+          speed={0.6}
+          className="top-1/2 left-20"
         />
       </div>
 
