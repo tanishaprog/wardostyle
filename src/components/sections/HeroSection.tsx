@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { FloatingNote } from "../FloatingNote";
 import { ScribbleArrow } from "../ScribbleArrow";
-import { InteractiveButton } from "../InteractiveButton";
+import { MagneticButton } from "../MagneticButton";
+import { Sparkles as SparklesEffect } from "../ParticleField";
 import { Sparkles, Shirt, Brain } from "lucide-react";
 
 export const HeroSection = () => {
@@ -69,12 +70,19 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <InteractiveButton variant="primary" size="lg">
+              <MagneticButton 
+                className="relative px-8 py-4 text-lg font-display font-semibold bg-primary text-primary-foreground rounded-sm shadow-playful overflow-hidden"
+                data-cursor-text="explore"
+              >
+                <SparklesEffect />
                 Explore how Wardo works
-              </InteractiveButton>
-              <InteractiveButton variant="outline" size="lg">
+              </MagneticButton>
+              <MagneticButton 
+                className="px-8 py-4 text-lg font-display font-semibold border-2 border-charcoal bg-transparent text-foreground rounded-sm hover:bg-muted"
+                data-cursor-text="join"
+              >
                 Join the waitlist
-              </InteractiveButton>
+              </MagneticButton>
             </motion.div>
           </div>
 

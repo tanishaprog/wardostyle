@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { InteractiveButton } from "../InteractiveButton";
+import { MagneticButton } from "../MagneticButton";
 import { FloatingNote } from "../FloatingNote";
+import { ConfettiBurst, Sparkles as SparklesEffect } from "../ParticleField";
 import { Mail, Heart, Sparkles, Check } from "lucide-react";
 
 export const WaitlistCTA = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      setSubmitted(true);
+      setShowConfetti(true);
+      setTimeout(() => setSubmitted(true), 500);
     }
   };
 
@@ -73,22 +76,28 @@ export const WaitlistCTA = () => {
             transition={{ delay: 0.4 }}
           >
             {!submitted ? (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <div className="relative flex-1">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="your@email.com"
-                    className="w-full pl-12 pr-4 py-4 text-lg bg-card border-2 border-border rounded-xl focus:border-primary focus:outline-none transition-colors"
-                    required
-                  />
-                </div>
-                <InteractiveButton variant="primary" size="lg" className="whitespace-nowrap">
-                  Join waitlist
-                </InteractiveButton>
-              </form>
+              <>
+                <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <div className="relative flex-1">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      className="w-full pl-12 pr-4 py-4 text-lg bg-card border-2 border-border rounded-xl focus:border-primary focus:outline-none transition-colors"
+                      required
+                    />
+                  </div>
+                  <MagneticButton 
+                    className="relative px-6 py-4 text-lg font-display font-semibold bg-primary text-primary-foreground rounded-xl shadow-playful whitespace-nowrap overflow-hidden"
+                  >
+                    <SparklesEffect />
+                    Join waitlist
+                  </MagneticButton>
+                </form>
+                <ConfettiBurst trigger={showConfetti} />
+              </>
             ) : (
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
