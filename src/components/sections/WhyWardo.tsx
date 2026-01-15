@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FloatingNote } from "../FloatingNote";
 import { ScribbleArrow } from "../ScribbleArrow";
+import { ParallaxShape, ParallaxText } from "../ParallaxLayer";
 
 const painPoints = [
   {
@@ -35,22 +36,39 @@ export const WhyWardo = () => {
       {/* Paper texture background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
       
+      {/* Parallax shapes */}
+      <ParallaxShape 
+        shape="circle" 
+        size={180} 
+        color="hsl(var(--yellow) / 0.1)" 
+        speed={0.35}
+        className="top-20 -left-10"
+      />
+      <ParallaxShape 
+        shape="blob" 
+        size={220} 
+        color="hsl(var(--primary) / 0.08)" 
+        speed={-0.3}
+        className="top-1/2 -right-20"
+      />
+      <ParallaxShape 
+        shape="square" 
+        size={120} 
+        color="hsl(var(--secondary) / 0.1)" 
+        speed={0.45}
+        className="bottom-40 left-1/4"
+      />
+      
       <div className="max-w-5xl mx-auto relative z-10">
-        {/* Handwritten header */}
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        {/* Handwritten header with parallax */}
+        <ParallaxText direction="up" className="text-center mb-20">
           <span className="font-handwritten text-3xl text-muted-foreground block mb-4">
             A note from the founders
           </span>
           <h2 className="font-display text-4xl md:text-6xl font-bold">
             Why we built Wardo
           </h2>
-        </motion.div>
+        </ParallaxText>
 
         {/* Pain points list */}
         <div className="space-y-8 mb-16 max-w-2xl mx-auto">

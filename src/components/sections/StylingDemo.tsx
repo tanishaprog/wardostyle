@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { InteractiveButton } from "../InteractiveButton";
 import { FloatingNote } from "../FloatingNote";
+import { ParallaxShape, ParallaxText } from "../ParallaxLayer";
 import { Cloud, Sun, Umbrella, MapPin, Calendar, Sparkles } from "lucide-react";
 
 const weatherOptions = [
@@ -50,18 +51,35 @@ export const StylingDemo = () => {
 
   return (
     <section className="py-24 px-6 lg:px-12 relative overflow-hidden">
-      {/* Background */}
+      {/* Background with parallax */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-pink/5 to-background" />
       
+      {/* Parallax shapes */}
+      <ParallaxShape 
+        shape="circle" 
+        size={250} 
+        color="hsl(var(--pink) / 0.1)" 
+        speed={0.3}
+        className="top-10 -right-20"
+      />
+      <ParallaxShape 
+        shape="blob" 
+        size={200} 
+        color="hsl(var(--secondary) / 0.15)" 
+        speed={-0.4}
+        className="bottom-20 -left-20"
+      />
+      <ParallaxShape 
+        shape="square" 
+        size={80} 
+        color="hsl(var(--accent) / 0.1)" 
+        speed={0.5}
+        className="top-1/3 left-10"
+      />
+      
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        {/* Section header with parallax text */}
+        <ParallaxText direction="up" className="text-center mb-16">
           <span className="font-handwritten text-2xl text-primary">How it works</span>
           <h2 className="font-display text-4xl md:text-6xl font-bold mt-2">
             Style me, Wardo
@@ -69,7 +87,7 @@ export const StylingDemo = () => {
           <p className="text-xl text-muted-foreground mt-4 max-w-2xl mx-auto">
             Tell us the occasion, and we'll suggest outfits from your actual wardrobe.
           </p>
-        </motion.div>
+        </ParallaxText>
 
         {/* Interactive demo area */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
