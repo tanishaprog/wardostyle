@@ -2,124 +2,123 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-/* WARDO Design System - Fashion Moodboard Aesthetic */
+/* WARDO Design System - Scrappy Notebook Aesthetic */
 
 @layer base {
   :root {
-    /* Warm cream backgrounds */
-    --background: 42 35% 95%;
-    --foreground: 20 15% 12%;
+    /* Off-white paper background */
+    --background: 45 30% 96%;
+    --foreground: 30 10% 15%;
 
-    /* Cards with slight warmth */
-    --card: 45 45% 98%;
-    --card-foreground: 20 15% 12%;
+    /* Notebook paper for cards */
+    --card: 48 40% 97%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 45 40% 98%;
-    --popover-foreground: 20 10% 15%;
+    --popover: 48 40% 97%;
+    --popover-foreground: 30 10% 15%;
 
-    /* Coral/Orange Primary */
+    /* Coral/Orange Primary - like a highlighter */
     --primary: 16 85% 58%;
-    --primary-foreground: 45 40% 98%;
+    --primary-foreground: 48 40% 97%;
 
-    /* Sage Green Secondary */
-    --secondary: 145 25% 72%;
-    --secondary-foreground: 20 10% 15%;
+    /* Mint Green Secondary - like a sticky note */
+    --secondary: 155 35% 75%;
+    --secondary-foreground: 30 10% 15%;
 
     /* Muted cream tones */
-    --muted: 40 20% 92%;
-    --muted-foreground: 20 10% 40%;
+    --muted: 45 25% 90%;
+    --muted-foreground: 30 10% 45%;
 
-    /* Soft Blue Accent */
-    --accent: 210 60% 70%;
-    --accent-foreground: 20 10% 15%;
+    /* Soft Blue Accent - like ink */
+    --accent: 215 55% 68%;
+    --accent-foreground: 30 10% 15%;
 
-    /* Dusty Pink */
-    --pink: 350 60% 75%;
-    --pink-foreground: 20 10% 15%;
+    /* Dusty Pink - like washi tape */
+    --pink: 355 55% 75%;
+    --pink-foreground: 30 10% 15%;
 
-    /* Warm Yellow */
-    --yellow: 45 90% 65%;
-    --yellow-foreground: 20 10% 15%;
+    /* Warm Yellow - like a highlighter */
+    --yellow: 48 85% 70%;
+    --yellow-foreground: 30 10% 15%;
 
-    /* Deep Charcoal for contrast */
-    --charcoal: 20 10% 15%;
+    /* Pencil grey/charcoal */
+    --charcoal: 30 10% 20%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 45 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 48 40% 97%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
+    --border: 35 25% 82%;
+    --input: 35 25% 85%;
     --ring: 16 85% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
     /* Sidebar */
-    --sidebar-background: 40 33% 96%;
-    --sidebar-foreground: 20 10% 15%;
+    --sidebar-background: 45 30% 94%;
+    --sidebar-foreground: 30 10% 15%;
     --sidebar-primary: 16 85% 58%;
-    --sidebar-primary-foreground: 45 40% 98%;
-    --sidebar-accent: 145 25% 72%;
-    --sidebar-accent-foreground: 20 10% 15%;
-    --sidebar-border: 30 20% 88%;
+    --sidebar-primary-foreground: 48 40% 97%;
+    --sidebar-accent: 155 35% 75%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 35 25% 82%;
     --sidebar-ring: 16 85% 58%;
 
-    /* Custom gradients */
-    --gradient-warm: linear-gradient(135deg, hsl(16 85% 58%) 0%, hsl(45 90% 65%) 100%);
-    --gradient-cool: linear-gradient(135deg, hsl(210 60% 70%) 0%, hsl(145 25% 72%) 100%);
-    --gradient-sunset: linear-gradient(180deg, hsl(40 33% 96%) 0%, hsl(350 60% 95%) 100%);
+    /* Custom effects */
+    --gradient-warm: linear-gradient(135deg, hsl(16 85% 58%) 0%, hsl(48 85% 70%) 100%);
+    --gradient-cool: linear-gradient(135deg, hsl(215 55% 68%) 0%, hsl(155 35% 75%) 100%);
+    --gradient-paper: linear-gradient(180deg, hsl(45 30% 96%) 0%, hsl(40 25% 93%) 100%);
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(20 10% 15% / 0.08);
-    --shadow-lifted: 0 8px 30px -8px hsl(20 10% 15% / 0.12);
-    --shadow-playful: 4px 4px 0px hsl(20 10% 15%);
+    /* Shadows - more sketchy/offset */
+    --shadow-soft: 0 2px 8px -2px hsl(30 10% 15% / 0.06);
+    --shadow-lifted: 3px 3px 0px hsl(30 10% 15% / 0.15);
+    --shadow-playful: 4px 4px 0px hsl(30 10% 20%);
+    --shadow-sketchy: 3px 3px 0px hsl(30 10% 20%), 4px 4px 0px hsl(30 10% 20% / 0.5);
   }
 
   .dark {
-    --background: 150 15% 10%;
-    --foreground: 40 20% 92%;
+    --background: 30 15% 10%;
+    --foreground: 45 20% 90%;
 
-    --card: 150 12% 14%;
-    --card-foreground: 40 20% 92%;
+    --card: 30 12% 14%;
+    --card-foreground: 45 20% 90%;
 
-    --popover: 150 12% 14%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 30 12% 14%;
+    --popover-foreground: 45 20% 90%;
 
     --primary: 16 75% 55%;
-    --primary-foreground: 40 20% 92%;
+    --primary-foreground: 45 20% 90%;
 
-    --secondary: 145 20% 25%;
-    --secondary-foreground: 40 20% 92%;
+    --secondary: 155 25% 30%;
+    --secondary-foreground: 45 20% 90%;
 
-    --muted: 150 10% 20%;
-    --muted-foreground: 40 15% 65%;
+    --muted: 30 10% 20%;
+    --muted-foreground: 45 15% 60%;
 
-    --accent: 210 40% 35%;
-    --accent-foreground: 40 20% 92%;
+    --accent: 215 40% 40%;
+    --accent-foreground: 45 20% 90%;
 
-    --pink: 350 40% 45%;
-    --pink-foreground: 40 20% 92%;
+    --pink: 355 40% 45%;
+    --pink-foreground: 45 20% 90%;
 
-    --yellow: 45 70% 50%;
-    --yellow-foreground: 150 15% 10%;
+    --yellow: 48 70% 50%;
+    --yellow-foreground: 30 15% 10%;
 
-    --charcoal: 40 20% 92%;
+    --charcoal: 45 20% 90%;
 
-    --destructive: 0 62.8% 35%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive: 0 62% 35%;
+    --destructive-foreground: 45 20% 90%;
 
-    --border: 150 10% 20%;
-    --input: 150 10% 20%;
+    --border: 30 10% 22%;
+    --input: 30 10% 22%;
     --ring: 16 75% 55%;
 
-    --sidebar-background: 150 15% 10%;
-    --sidebar-foreground: 40 20% 92%;
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 45 20% 90%;
     --sidebar-primary: 16 75% 55%;
-    --sidebar-primary-foreground: 40 20% 92%;
-    --sidebar-accent: 145 20% 25%;
-    --sidebar-accent-foreground: 40 20% 92%;
-    --sidebar-border: 150 10% 20%;
+    --sidebar-primary-foreground: 45 20% 90%;
+    --sidebar-accent: 155 25% 30%;
+    --sidebar-accent-foreground: 45 20% 90%;
+    --sidebar-border: 30 10% 22%;
     --sidebar-ring: 16 75% 55%;
   }
 }
@@ -132,10 +131,14 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
+    /* Subtle paper texture */
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Migra', Georgia, serif;
+    letter-spacing: -0.02em;
   }
 
   .font-handwritten {
@@ -143,31 +146,76 @@
   }
 
   .font-display {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Migra', Georgia, serif;
   }
 }
 
 @layer components {
-  /* Playful floating note */
-  .floating-note {
-    @apply bg-yellow text-yellow-foreground px-4 py-2 rounded-sm shadow-playful;
-    transform: rotate(-2deg);
-    font-family: 'Caveat', cursive;
+  /* Notebook paper lines */
+  .notebook-lines {
+    background-image: repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      hsl(var(--border)) 31px,
+      hsl(var(--border)) 32px
+    );
+    background-size: 100% 32px;
   }
 
-  /* Scribble underline effect */
+  /* Torn paper edge effect */
+  .torn-edge {
+    position: relative;
+  }
+  
+  .torn-edge::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    height: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 16'%3E%3Cpath d='M0 0 L5 8 L10 2 L18 10 L25 4 L33 12 L40 6 L48 14 L55 5 L63 11 L70 3 L78 9 L85 1 L93 7 L100 0 L100 16 L0 16 Z' fill='%23F5F0E8'/%3E%3C/svg%3E") repeat-x;
+  }
+
+  /* Playful sticky note */
+  .floating-note {
+    @apply bg-yellow text-yellow-foreground px-4 py-2 shadow-sketchy;
+    transform: rotate(-2deg);
+    font-family: 'Caveat', cursive;
+    border: 2px solid hsl(var(--charcoal) / 0.1);
+  }
+
+  /* Hand-drawn underline effect */
   .scribble-underline {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12'%3E%3Cpath d='M2 8 Q25 2 50 8 T98 6' stroke='%23E86F4A' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12'%3E%3Cpath d='M2 8 Q15 3 30 9 T60 6 T90 8 T98 7' stroke='%23E86F4A' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-dasharray='2 1'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: 100% 12px;
     padding-bottom: 8px;
   }
 
-  /* Polaroid card effect */
+  /* Polaroid/instant photo effect */
   .polaroid-card {
-    @apply bg-card p-3 pb-12 shadow-lifted;
+    @apply bg-card p-2 pb-10 shadow-sketchy;
     transform: rotate(var(--rotation, 0deg));
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* Tape strips for attaching things */
+  .tape-strip {
+    position: relative;
+  }
+  
+  .tape-strip::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 60px;
+    height: 24px;
+    background: hsl(48 60% 85% / 0.8);
+    border: 1px solid hsl(48 40% 70% / 0.5);
   }
 
   /* Wiggle animation */
@@ -190,19 +238,39 @@
     transform: rotate(var(--rotation, -3deg));
   }
 
-  /* Messy border */
-  .messy-border {
+  /* Sketchy/wobbly border */
+  .sketchy-border {
     border: 2px solid hsl(var(--charcoal));
-    border-radius: 2px 8px 4px 12px;
+    border-radius: 4px 12px 8px 16px / 16px 4px 12px 8px;
   }
 
-  /* Section divider with scribble */
+  /* Doodle circle */
+  .doodle-circle {
+    border: 2px dashed hsl(var(--primary));
+    border-radius: 50%;
+  }
+
+  /* Section divider - hand-drawn line */
   .scribble-divider {
     height: 40px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M0 20 Q100 5 200 20 T400 20' stroke='%23D4C4B0' stroke-width='2' fill='none' stroke-linecap='round' stroke-dasharray='8 4'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 40'%3E%3Cpath d='M10 20 Q50 15 100 22 T200 18 T300 24 T390 19' stroke='%23C9BDA8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-dasharray='6 4'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 40px;
+  }
+
+  /* WIP badge */
+  .wip-badge {
+    @apply font-handwritten text-sm px-3 py-1 bg-yellow/30 text-yellow-foreground rounded-full;
+    border: 1px dashed hsl(var(--yellow));
+    transform: rotate(-2deg);
+  }
+
+  /* Crossed out text */
+  .crossed-out {
+    text-decoration: line-through;
+    text-decoration-style: wavy;
+    text-decoration-color: hsl(var(--primary));
   }
 }
 
@@ -211,9 +279,13 @@
   .rotate-neg-1 { transform: rotate(-1deg); }
   .rotate-neg-2 { transform: rotate(-2deg); }
   .rotate-neg-3 { transform: rotate(-3deg); }
+  .rotate-neg-4 { transform: rotate(-4deg); }
+  .rotate-neg-5 { transform: rotate(-5deg); }
   .rotate-1 { transform: rotate(1deg); }
   .rotate-2 { transform: rotate(2deg); }
   .rotate-3 { transform: rotate(3deg); }
+  .rotate-4 { transform: rotate(4deg); }
+  .rotate-5 { transform: rotate(5deg); }
 
   /* Gradient text */
   .gradient-text {
@@ -235,6 +307,24 @@
   .shadow-lifted {
     box-shadow: var(--shadow-lifted);
   }
+
+  .shadow-sketchy {
+    box-shadow: var(--shadow-sketchy);
+  }
+
+  /* Paper texture overlay */
+  .paper-texture {
+    position: relative;
+  }
+  
+  .paper-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+  }
 }
 
 @keyframes wiggle {
@@ -253,6 +343,11 @@
   100% { stroke-dashoffset: 0; }
 }
 
+@keyframes wobble {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
@@ -265,4 +360,8 @@
 .animate-float-delayed-2 {
   animation: float 4s ease-in-out infinite;
   animation-delay: 2s;
+}
+
+.animate-wobble {
+  animation: wobble 3s ease-in-out infinite;
 }

@@ -136,7 +136,7 @@ export const WaitlistCTA = () => {
             </div>
             <div className="flex items-center gap-1 text-muted-foreground text-sm">
               <Heart className="w-4 h-4 text-pink" />
-              <span>Made with love in Mumbai</span>
+              <span>Made with love in India</span>
             </div>
           </motion.div>
         </motion.div>
