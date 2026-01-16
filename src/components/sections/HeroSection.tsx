@@ -5,6 +5,7 @@ import { MagneticButton } from "../MagneticButton";
 import { Sparkles as SparklesEffect } from "../ParticleField";
 import { ParallaxShape } from "../ParallaxLayer";
 import { Sparkles, Shirt, Brain } from "lucide-react";
+import wardoLogo from "@/assets/wardo-logo.png";
 
 export const HeroSection = () => {
   return (
@@ -175,13 +176,13 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-secondary/30 flex items-center justify-center">
-                <motion.div
-                  className="font-handwritten text-6xl text-primary"
+                <motion.img
+                  src={wardoLogo}
+                  alt="Wardo"
+                  className="w-32 h-auto"
                   animate={{ rotate: [0, 5, 0, -5, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                >
-                  W
-                </motion.div>
+                />
               </div>
             </motion.div>
           </div>

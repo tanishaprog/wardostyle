@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import wardoLogo from "@/assets/wardo-logo.png";
 
 const navLinks = [
   { label: "How it works", href: "#styling" },
@@ -38,11 +39,10 @@ export const Navigation = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="font-display text-2xl font-bold text-primary flex items-center gap-2"
+            className="flex items-center"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="font-handwritten text-3xl">W</span>
-            <span>wardo</span>
+            <img src={wardoLogo} alt="Wardo" className="h-8 w-auto" />
           </motion.a>
 
           {/* Desktop links */}
