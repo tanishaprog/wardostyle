@@ -45,11 +45,11 @@ export const Footer = () => {
         </div>
 
         {/* Bottom line */}
-        <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p className="flex items-center justify-center gap-1">
-            Made with <Heart className="w-4 h-4 text-pink fill-pink" /> in Mumbai
+        <div className="mt-8 pt-8 border-t border-border border-dashed text-center text-sm text-muted-foreground">
+          <p className="flex items-center justify-center gap-1 font-handwritten text-xl">
+            Made with <Heart className="w-4 h-4 text-pink fill-pink" /> in India
           </p>
-          <p className="mt-1 font-handwritten text-lg">© 2024 Wardo. Your second brain for fashion.</p>
+          <p className="mt-2 text-xs text-muted-foreground">© 2025 Wardo. Your second brain for fashion.</p>
         </div>
       </div>
     </footer>
