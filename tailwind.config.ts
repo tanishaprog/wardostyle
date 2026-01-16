@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        display: ['Migra', 'Georgia', 'serif'],
         handwritten: ['Caveat', 'cursive'],
       },
       colors: {

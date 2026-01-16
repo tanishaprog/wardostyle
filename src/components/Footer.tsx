@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Instagram, Twitter } from "lucide-react";
+import wardoLogo from "@/assets/wardo-logo.png";
 
 export const Footer = () => {
   return (
@@ -7,13 +8,13 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <motion.div
-            className="flex items-center gap-2"
+          <motion.a
+            href="#"
+            className="flex items-center"
             whileHover={{ scale: 1.02 }}
           >
-            <span className="font-handwritten text-4xl text-primary">W</span>
-            <span className="font-display text-xl font-bold">wardo</span>
-          </motion.div>
+            <img src={wardoLogo} alt="Wardo" className="h-10 w-auto" />
+          </motion.a>
 
           {/* Links */}
           <div className="flex items-center gap-8 text-sm text-muted-foreground">
