@@ -4,18 +4,47 @@ import { MagneticButton } from "../MagneticButton";
 import { FloatingNote } from "../FloatingNote";
 import { ConfettiBurst, Sparkles as SparklesEffect } from "../ParticleField";
 import { Mail, Heart, Sparkles, Check } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 export const WaitlistCTA = () => {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setShowConfetti(true);
-      setTimeout(() => setSubmitted(true), 500);
+    if (!email || isSubmitting) return;
+
+    setIsSubmitting(true);
+    
+    const { error } = await supabase
+      .from('waitlist')
+      .insert({ email: email.trim().toLowerCase() });
+
+    if (error) {
+      if (error.code === '23505') {
+        // Duplicate email
+        toast({
+          title: "Already on the list!",
+          description: "This email is already on our waitlist.",
+        });
+      } else {
+        toast({
+          title: "Oops!",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+      setIsSubmitting(false);
+      return;
     }
+
+    setShowConfetti(true);
+    setTimeout(() => setSubmitted(true), 500);
+    setIsSubmitting(false);
   };
 
   return (
