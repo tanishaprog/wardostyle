@@ -49,7 +49,7 @@ export const Footer = () => {
           <p className="flex items-center justify-center gap-1 font-handwritten text-xl">
             Made with <Heart className="w-4 h-4 text-pink fill-pink" /> in India
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">© 2025 Wardo. Your second brain for fashion.</p>
+          <p className="mt-2 text-xs text-muted-foreground">© 2025 Wardo. Your second brain for everything fashion.</p>
         </div>
       </div>
     </footer>
